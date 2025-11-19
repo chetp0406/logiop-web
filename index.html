@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logiop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="css/site.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Nav -->
+    <nav id="mainNav" class="navbar navbar-expand-1050 fixed-top navbar-light">
+        <div class="container-fluid">
+            <!-- Brand -->
+            <a class="navbar-brand fw-bold fs-3" href="#">Logiop</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse: Nav links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+                <button class="btn-close" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-label="Close"></button>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link mx-3" href="#overview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#editions">Editions</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#platforms">Supported Platforms</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#docs">Docs</a></li>
+                </ul>
+            </div>
+
+            <!-- Controls group (moon + contact) -->
+            <div id="controlsGroup" class="d-flex align-items-center gap-2">
+                <button class="btn btn-link p-0" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <a href="#contact" class="btn btn-outline-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="hero-section">
+        <div class="container-fluid section-container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="d-block mb-4 hero-heading">
+                        State machines made easy.
+                    </span>
+                    <h2 class="hero-gradient-heading mb-4">
+                        Design. Validate. Simulate. Execute.
+                    </h2>
+                    <p class="hero-subtext mb-5">
+                        Unleash your creativity and optimize resources with finely crafted state machines
+                        in your software development lifecycle.
+                    </p>
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- CTA Button -->
+                        <button class="cta-btn">
+                            <span>Launch Designer</span>
+                            <span class="cta-separator"></span>
+                            <span class="cta-beta">Beta</span>
+                        </button>
+
+                        <!-- Watch Demo -->
+                        <a href="#" class="watch-demo d-inline-flex align-items-center text-decoration-none"
+                           data-bs-toggle="modal" data-bs-target="#demoModal">
+                            <i class="fa-regular fa-circle-play mx-2 me-2 fa-3x"></i>
+                            <span>Watch demo</span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="images/logiop-scrn.png" alt="App screenshot" class="hero-screenshot" data-bs-toggle="modal" data-bs-target="#screenshotModal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="overview-section">
+        <div class="container-fluid section-container">
+            <h2 class="section-divider">Overview</h2>
+            <!-- Logiop -->
+            <div class="overview-card">
+                <h3>Logiop</h3>
+                <p>
+                    A modern framework designed to bring the power and elegance of state machines into everyday software development — and to provide clarity for brainstorming or organizational tasks. Well‑crafted state machines can replace long hours of sifting through code and writing test stubs, helping optimize the development lifecycle. Logiop strives to be a
+                    <span class="tech-term">true implementation of visual coding</span>, empowering developers to move seamlessly from design to runtime. It consists of two core components:
+                </p>
+            </div>
+
+            <!-- The Designer -->
+            <div class="overview-card">
+                <h3>Designer</h3>
+                <p>
+                    A <span class="tech-term">Progressive Web Application (PWA)</span> that runs in the browser or can be installed as an app. Once installed, it can be used offline. It relies on the <span class="tech-term">File System Access API</span> to read and write files
+                    within a designated workspace folder on the local file system. All data remains local; no files are transmitted to external services. It graphs hierarchical state machines based on the <span class="tech-term">Unified Modeling Language (UML)</span>. The Designer is not limited to software developers — it can be valuable for anyone exploring the clarity and discipline of state machines.
+                </p>
+            </div>
+
+            <!-- Pulse Processor -->
+            <div class="overview-card">
+                <h3>Pulse Processor</h3>
+                <p>
+                    A <span class="tech-term">.NET Standard</span> library that executes the code graphs produced by the Designer, enabling runtime execution of state machines in real applications. It handles the heavy lifting of execution semantics, leaving developers to focus on implementing behaviors: <span class="tech-term">
+                        entry/doActivity/exit actions
+                    </span> of state vertices, and <span class="tech-term">
+                        guards/effects
+                    </span> of transitions.
+                    Pulse is lightweight, asynchronous, and high‑performance, based on the <span class="tech-term">Precise Semantics for State Machines (PSSM) 1.0 standard</span>. It supports both high‑level and low‑level state machines — from user interface flows and application logic to detailed algorithmic execution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features  mb-5">
+        <div class="container-fluid section-container">
+            <h2 class="section-divider">Features</h2>
+            <div class="row">
+                <div class="col-md-4 feature-card">
+                    <img src="images/diagram-project.png" alt="Design icon" class="feature-icon" />
+                    <h3>Design</h3>
+                    <p>Hierarchical state machines with key features including reusable behaviors, deep nesting of state vertices, prioritized orthogonal regions, submachines with connection point references, and auto-routed transitions.</p>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <img src="images/shield-check.png" alt="Design icon" class="feature-icon" />
+                    <h3>Validate</h3>
+                    <p>Validate state machines against both custom rules and standards-based criteria to ensure structural and execution integrity.</p>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <img src="images/play.png" alt="Design icon" class="feature-icon" />
+                    <h3>Simulate</h3>
+                    <p>A state-of-the-art simulator powered by the Pulse processor enables thorough analysis of events and behaviors during execution.</p>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <img src="images/export.png" alt="Design icon" class="feature-icon" />
+                    <h3>Export</h3>
+                    <p>Share designs via <span class="tech-term">SCXML</span> and other interoperable formats.</p>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <img src="images/code.png" alt="Design icon" class="feature-icon" />
+                    <h3>Generate Code</h3>
+                    <p>Produce compact code graphs that serve as input for execution by the Pulse processor.</p>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="feature-icon">
+                        <path d="M17.38,23.36h-2.76c-0.199,0-0.36-0.161-0.36-0.36v-1.567l-0.869-0.363l-1.111,1.111
+                            c-0.067,0.067-0.159,0.105-0.254,0.105c-0.096,0-0.187-0.038-0.254-0.105L9.82,20.229c-0.141-0.141-0.141-0.369,0-0.51
+                            l1.108-1.107l-0.357-0.871H9c-0.199,0-0.36-0.161-0.36-0.36v-2.76c0-0.199,0.161-0.36,0.36-0.36h1.567l0.363-0.869L9.82,12.28
+                            c-0.14-0.141-0.14-0.368,0-0.509l1.951-1.952c0.135-0.136,0.374-0.136,0.509,0l1.108,1.109l0.872-0.357V9
+                            c0-0.199,0.161-0.36,0.36-0.36h2.76c0.199,0,0.36,0.161,0.36,0.36v1.567l0.868,0.363l1.11-1.111c0.135-0.135,0.375-0.136,0.51,0
+                            l1.952,1.952c0.067,0.067,0.105,0.159,0.105,0.254c0,0.096-0.038,0.187-0.105,0.254l-1.109,1.108l0.357,0.872H23
+                            c0.199,0,0.36,0.161,0.36,0.36v2.76c0,0.199-0.161,0.36-0.36,0.36h-1.567l-0.363,0.868l1.111,1.11
+                            c0.067,0.067,0.105,0.159,0.105,0.255s-0.038,0.188-0.105,0.255l-1.952,1.952c-0.067,0.067-0.159,0.105-0.255,0.105
+                            c-0.096,0-0.188-0.038-0.255-0.105l-1.107-1.109l-0.871,0.357V23C17.74,23.199,17.579,23.36,17.38,23.36z M14.98,22.64h2.04v-1.452
+                            c0-0.146,0.089-0.277,0.224-0.333l1.316-0.54c0.134-0.057,0.288-0.024,0.392,0.078l1.022,1.024l1.443-1.443l-1.028-1.026
+                            c-0.103-0.104-0.134-0.259-0.077-0.394l0.55-1.312c0.056-0.134,0.187-0.222,0.332-0.222h1.446v-2.04h-1.452
+                            c-0.146,0-0.277-0.088-0.333-0.223l-0.54-1.316c-0.055-0.134-0.024-0.289,0.078-0.391l1.024-1.023l-1.443-1.443l-1.026,1.027
+                            c-0.104,0.103-0.259,0.135-0.394,0.078l-1.312-0.549c-0.134-0.056-0.222-0.187-0.222-0.332V9.36h-2.04v1.452
+                            c0,0.146-0.088,0.278-0.223,0.333l-1.316,0.54c-0.135,0.054-0.288,0.024-0.391-0.079l-1.023-1.023l-1.442,1.443l1.027,1.028
+                            c0.103,0.103,0.134,0.259,0.077,0.394L11.14,14.76c-0.056,0.134-0.187,0.221-0.332,0.221H9.36v2.04h1.452
+                            c0.146,0,0.278,0.089,0.333,0.224l0.54,1.316c0.055,0.135,0.024,0.289-0.079,0.392l-1.022,1.022l1.442,1.443l1.028-1.028
+                            c0.104-0.104,0.259-0.133,0.394-0.077l1.312,0.55c0.134,0.056,0.221,0.187,0.221,0.332V22.64z M16,19.36
+                            c-1.853,0-3.36-1.508-3.36-3.36s1.507-3.36,3.36-3.36s3.36,1.507,3.36,3.36S17.853,19.36,16,19.36z M16,13.36
+                            c-1.456,0-2.64,1.185-2.64,2.64c0,1.456,1.185,2.64,2.64,2.64c1.456,0,2.64-1.184,2.64-2.64S17.456,13.36,16,13.36z M16,31.36
+                            c-4.529,0-8.716-1.933-11.64-5.338V30H3.64v-5.36H9v0.721H4.743C7.536,28.725,11.598,30.64,16,30.64
+                            c8.072,0,14.64-6.567,14.64-14.64h0.721C31.36,24.47,24.47,31.36,16,31.36z M1.36,16H0.64C0.64,7.53,7.53,0.64,16,0.64
+                            c4.529,0,8.716,1.933,11.64,5.337V2h0.721v5.36H23V6.64h4.257C24.464,3.275,20.401,1.36,16,1.36C7.927,1.36,1.36,7.927,1.36,16z" fill="none"
+                              stroke="#167dd4"
+                              stroke-width="1" />
+                    </svg>
+
+                    <h3>Execute</h3>
+                    <p>Run asynchronous state machines with the Pulse Processor embedded in your real application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editions -->
+    <section id="editions" class="editions mb-5">
+        <div class="container-fluid section-container">
+            <h2 class="section-divider">Editions</h2>
+            <div class="row mt-5">
+                <!-- Basic Edition -->
+                <div class="col-md-4">
+                    <div class="edition-card edition-basic">
+                        <h3>Basic</h3>
+                        <p class="edition-status">Beta Available</p>
+                        <div class="edition-feature-row">
+                            <img src="images/diagram-project.png" alt="Design icon" class="edition-feature-icon" />
+                            <span>Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plus Edition -->
+                <div class="col-md-4">
+                    <div class="edition-card edition-plus">
+                        <h3>Plus</h3>
+                        <p class="edition-status">In Development</p>
+                        <div class="edition-feature-row">
+                            <img src="images/shield-check.png" alt="Design icon" class="edition-feature-icon" />
+                            <span>Validate</span>
+                        </div>
+                        <div class="edition-feature-row">
+                            <img src="images/play.png" alt="Simulate icon" class="edition-feature-icon" />
+                            <span>Simulate</span>
+                        </div>
+                        <div class="edition-feature-row">
+                            <img src="images/export.png" alt="Export icon" class="edition-feature-icon" />
+                            <span>Export</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ultimate Edition -->
+                <div class="col-md-4">
+                    <div class="edition-card edition-ultimate">
+                        <h3>Ultimate</h3>
+                        <p class="edition-status">In Development</p>
+                        <div class="edition-feature-row">
+                            <img src="images/code.png" alt="Generate Code icon" class="edition-feature-icon" />
+                            <span>Generate Code</span>
+                        </div>
+                        <div class="edition-feature-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="edition-feature-icon">
+                                <path d="M17.38,23.36h-2.76c-0.199,0-0.36-0.161-0.36-0.36v-1.567l-0.869-0.363l-1.111,1.111
+                                    c-0.067,0.067-0.159,0.105-0.254,0.105c-0.096,0-0.187-0.038-0.254-0.105L9.82,20.229c-0.141-0.141-0.141-0.369,0-0.51
+                                    l1.108-1.107l-0.357-0.871H9c-0.199,0-0.36-0.161-0.36-0.36v-2.76c0-0.199,0.161-0.36,0.36-0.36h1.567l0.363-0.869L9.82,12.28
+                                    c-0.14-0.141-0.14-0.368,0-0.509l1.951-1.952c0.135-0.136,0.374-0.136,0.509,0l1.108,1.109l0.872-0.357V9
+                                    c0-0.199,0.161-0.36,0.36-0.36h2.76c0.199,0,0.36,0.161,0.36,0.36v1.567l0.868,0.363l1.11-1.111c0.135-0.135,0.375-0.136,0.51,0
+                                    l1.952,1.952c0.067,0.067,0.105,0.159,0.105,0.254c0,0.096-0.038,0.187-0.105,0.254l-1.109,1.108l0.357,0.872H23
+                                    c0.199,0,0.36,0.161,0.36,0.36v2.76c0,0.199-0.161,0.36-0.36,0.36h-1.567l-0.363,0.868l1.111,1.11
+                                    c0.067,0.067,0.105,0.159,0.105,0.255s-0.038,0.188-0.105,0.255l-1.952,1.952c-0.067,0.067-0.159,0.105-0.255,0.105
+                                    c-0.096,0-0.188-0.038-0.255-0.105l-1.107-1.109l-0.871,0.357V23C17.74,23.199,17.579,23.36,17.38,23.36z M14.98,22.64h2.04v-1.452
+                                    c0-0.146,0.089-0.277,0.224-0.333l1.316-0.54c0.134-0.057,0.288-0.024,0.392,0.078l1.022,1.024l1.443-1.443l-1.028-1.026
+                                    c-0.103-0.104-0.134-0.259-0.077-0.394l0.55-1.312c0.056-0.134,0.187-0.222,0.332-0.222h1.446v-2.04h-1.452
+                                    c-0.146,0-0.277-0.088-0.333-0.223l-0.54-1.316c-0.055-0.134-0.024-0.289,0.078-0.391l1.024-1.023l-1.443-1.443l-1.026,1.027
+                                    c-0.104,0.103-0.259,0.135-0.394,0.078l-1.312-0.549c-0.134-0.056-0.222-0.187-0.222-0.332V9.36h-2.04v1.452
+                                    c0,0.146-0.088,0.278-0.223,0.333l-1.316,0.54c-0.135,0.054-0.288,0.024-0.391-0.079l-1.023-1.023l-1.442,1.443l1.027,1.028
+                                    c0.103,0.103,0.134,0.259,0.077,0.394L11.14,14.76c-0.056,0.134-0.187,0.221-0.332,0.221H9.36v2.04h1.452
+                                    c0.146,0,0.278,0.089,0.333,0.224l0.54,1.316c0.055,0.135,0.024,0.289-0.079,0.392l-1.022,1.022l1.442,1.443l1.028-1.028
+                                    c0.104-0.104,0.259-0.133,0.394-0.077l1.312,0.55c0.134,0.056,0.221,0.187,0.221,0.332V22.64z M16,19.36
+                                    c-1.853,0-3.36-1.508-3.36-3.36s1.507-3.36,3.36-3.36s3.36,1.507,3.36,3.36S17.853,19.36,16,19.36z M16,13.36
+                                    c-1.456,0-2.64,1.185-2.64,2.64c0,1.456,1.185,2.64,2.64,2.64c1.456,0,2.64-1.184,2.64-2.64S17.456,13.36,16,13.36z M16,31.36
+                                    c-4.529,0-8.716-1.933-11.64-5.338V30H3.64v-5.36H9v0.721H4.743C7.536,28.725,11.598,30.64,16,30.64
+                                    c8.072,0,14.64-6.567,14.64-14.64h0.721C31.36,24.47,24.47,31.36,16,31.36z M1.36,16H0.64C0.64,7.53,7.53,0.64,16,0.64
+                                    c4.529,0,8.716,1.933,11.64,5.337V2h0.721v5.36H23V6.64h4.257C24.464,3.275,20.401,1.36,16,1.36C7.927,1.36,1.36,7.927,1.36,16z" fill="none"
+                                      stroke="#167dd4"
+                                      stroke-width="1" />
+                            </svg>
+                            <span>Execute</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing-section mb-5 pb-3">
+        <div class="container-fluid section-container">
+            <h2 class="section-divider">Pricing</h2>
+            <!-- The Designer -->
+            <div class="platform-card">
+                <p class="text-center">
+                    The beta version of the Designer is available for free. Pricing will be updated upon the official release of the Basic, Plus, and Ultimate editions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Platforms -->
+    <section id="platforms" class="platforms-section">
+        <div class="container-fluid section-container">
+            <h2 class="section-divider">Supported Platforms</h2>
+            <!-- The Designer -->
+            <div class="platform-card">
+                <h3>Designer</h3>
+                <p>
+                    The Logiop designer is supported only on desktop browsers, and is not intended for use on mobile devices or tablets. The designer is supported on <span class="tech-term">Microsoft Edge, Google Chrome, and other Chromium-based browsers</span>. Safari and Firefox are not currently supported.
+                </p>
+            </div>
+
+            <!-- Pulse Processor -->
+            <div class="platform-card">
+                <h3>Pulse Processor</h3>
+                <p>
+                    In its current version, Pulse runs in any <span class="tech-term">.NET</span> environment that supports the
+                    <span class="tech-term">.NET Standard</span> library — including <span class="tech-term">Blazor, WPF, MAUI, Unity, ASP.NET</span>, and the broader .NET stack.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Updated / Contact Us -->
+    <section id="contact" class="py-5 stay-updated text-center">
+        <div class="container">
+            <h2 class="mb-4">Stay Updated</h2>
+
+            <!-- Email subscription -->
+            <input type="email" class="form-control email-input mb-3"
+                   placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-secondary subscribe-btn mx-auto mb-3 px-5 py-2">
+                Subscribe
+            </button>
+            <small class="text-muted d-block mb-5">
+                We never share your email with any third parties
+            </small>
+
+            <!-- Contact Us Form -->
+            <div class="pt-4">
+                <h2 class="mb-4">Contact Us</h2>
+            </div>
+            <form class="contact-form mx-auto">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary px-5 py-2">
+                    Send Message
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- Beta -->
+    <section class="beta pt-5 pb-3 fw-lighter text-muted">
+        <div class="container-fluid section-container">
+            <h2 class="section-divider">Beta</h2>
+            <p>
+                <strong>Beta Release:</strong> The beta version of the Designer is limited to the Basic Edition. The Designer is powered by an alpha-tested version of the Pulse processor. When you use the Designer, you are experiencing Pulse in action. Upon completion of the beta phase, we plan to release a user‑facing version of Pulse.
+            </p>
+
+            <p>
+                <strong>Beta Rewards:</strong> Our hands‑on experience with Pulse inside the Designer has been extremely positive, and we’re excited to bring these capabilities to a wider audience. With your valuable feedback during this beta, we’ll refine the experience and prepare for a full launch after which beta users will receive discounts on paid editions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Screenshot Modal -->
+    <div class="modal fade video-modal" id="screenshotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-body p-0 text-center">
+                    <img src="images/logiop-scrn.png"
+                         alt="Full screenshot"
+                         class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <span class="window-close" data-bs-dismiss="modal">&times;</span>
+    </div>
+
+    <!-- Demo Video Modal -->
+    <div class="modal fade video-modal" id="demoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="990" height="557"
+                                src="https://www.youtube.com/embed/NZA0DtQr0HU?autoplay=1&mute=1"
+                                title="Sedona"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="window-close" data-bs-dismiss="modal">&times;</span>
+    </div>
+
+    <footer class="footer py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <small class="mb-2 mb-md-0">
+                © 2025 Firehill Software Solutions, LLC
+            </small>
+            <div class="footer-links">
+                <a href="#" class="me-3">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="btn btn-dark">
+        ↑
+    </button>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Your custom scripts -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
