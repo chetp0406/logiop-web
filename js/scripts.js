@@ -58,4 +58,17 @@
     backToTop.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Collapse links when link clicked (for mobile)
+    const navLinks = document.querySelectorAll("#navbarResponsive .nav-link");
+    const navbarCollapse = document.getElementById("navbarResponsive");
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+            });
+            bsCollapse.hide();
+        });
+    });
 });
