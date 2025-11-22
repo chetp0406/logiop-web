@@ -67,13 +67,16 @@
                         Unleash your creativity and optimize resources with finely crafted state machines
                         in your software development lifecycle.
                     </p>
-                    <div class="d-flex align-items-center gap-3">
-                        <!-- CTA Button -->
-                        <button class="cta-btn">
-                            <span>Launch Designer</span>
-                            <span class="cta-separator"></span>
-                            <span class="cta-beta">Beta</span>
-                        </button>
+                    <div class="d-flex align-items-start gap-3">
+                        <!-- CTA Button + Subtext -->
+                        <div class="d-flex flex-column align-items-start">
+                            <button class="cta-btn">
+                                <span>Launch Designer</span>
+                                <span class="cta-separator"></span>
+                                <span class="cta-beta">Beta</span>
+                            </button>
+                            <small class="text-muted mt-1 mx-2">Coming soon!</small>
+                        </div>
 
                         <!-- Watch Demo -->
                         <a href="#" class="watch-demo d-inline-flex align-items-center text-decoration-none"
@@ -111,6 +114,10 @@
                     A <span class="tech-term">Progressive Web Application (PWA)</span> that runs in the browser or can be installed as an app. Once installed, it can be used offline. It relies on the <span class="tech-term">File System Access API</span> to read and write files
                     within a designated workspace folder on the local file system. All data remains local; no files are transmitted to external services. It graphs hierarchical state machines based on the <span class="tech-term">Unified Modeling Language (UML)</span>. The Designer is not limited to software developers — it can be valuable for anyone exploring the clarity and discipline of state machines.
                 </p>
+                <div class="alert alert-info text-center fs-6" role="alert">
+                    Every user always has access to the latest version of the Designer — a single, unified edition.
+                    Features are unlocked through the <a href="#editions" class="scroll-link">editions</a> listed below.
+                </div>
             </div>
 
             <!-- Pulse Processor -->
@@ -202,7 +209,7 @@
                 <div class="col-md-4">
                     <div class="edition-card edition-basic">
                         <h3>Basic</h3>
-                        <p class="edition-status">Beta Available</p>
+                        <p class="edition-status">Beta Coming Soon</p>
                         <div class="edition-feature-row">
                             <img src="images/diagram-project.png" alt="Design icon" class="edition-feature-icon" />
                             <span>Design</span>
@@ -215,6 +222,9 @@
                     <div class="edition-card edition-plus">
                         <h3>Plus</h3>
                         <p class="edition-status">In Development</p>
+                        <div class="edition-feature-row">
+                            <span>Basic Edition +</span>
+                        </div>
                         <div class="edition-feature-row">
                             <img src="images/shield-check.png" alt="Design icon" class="edition-feature-icon" />
                             <span>Validate</span>
@@ -235,6 +245,9 @@
                     <div class="edition-card edition-ultimate">
                         <h3>Ultimate</h3>
                         <p class="edition-status">In Development</p>
+                        <div class="edition-feature-row">
+                            <span>Plus Edition +</span>
+                        </div>
                         <div class="edition-feature-row">
                             <img src="images/code.png" alt="Generate Code icon" class="edition-feature-icon" />
                             <span>Generate Code</span>
@@ -271,6 +284,11 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div class="alert alert-info text-center fs-6" role="alert">
+                The Designer is currently available in <a href="#beta-info" class="scroll-link"><strong>Beta</strong></a> as part of the <strong>Basic edition</strong>.
+                Additional editions are planned for release after the Beta, though timelines are not guaranteed.
             </div>
         </div>
     </section>
@@ -315,52 +333,82 @@
     <section id="contact" class="py-5 stay-updated text-center">
         <div class="container">
             <h2 class="mb-4 text-secondary">Stay Updated</h2>
-
             <!-- Email subscription -->
-            <input type="email" class="form-control email-input mb-3"
-                   placeholder="Enter your email" required>
-            <button type="submit" class="btn btn-gray mx-auto mb-3 px-5 py-2">
-                Subscribe
-            </button>
-            <small class="text-muted d-block mb-5">
-                We never share your email with any third parties
-            </small>
-
-            <!-- Contact Us Form -->
-            <div class="pt-4">
-                <h2 class="mb-4 text-secondary">Contact Us</h2>
-            </div>
-            <form class="contact-form mx-auto">
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-gray px-5 py-2">
-                    Send Message
+            <form id="subscribe-form">
+                <input type="email" name="user_email" class="form-control email-input mb-3"
+                       placeholder="Enter your email" required>
+                <button id="subscribe-btn" type="submit" class="btn btn-gray mx-auto mb-3 px-5 py-2">
+                    <span id="subscribe-btn-text">Subscribe</span>
+                    <span id="subscribe-btn-spinner" class="spinner-border spinner-border-sm d-none ms-2" role="status" aria-hidden="true"></span>
                 </button>
+                <small class="text-muted d-block mb-5">
+                    We never share your email with any third parties
+                </small>
             </form>
 
+            <!-- Success Alert -->
+            <div id="subscription-success-alert"
+                 class="alert alert-success mt-3 d-none d-flex justify-content-center align-items-center text-center"
+                 role="alert">
+                <i class="fa fa-check-circle me-2"></i>
+                <span>Subscription successful! Check your inbox for confirmation.</span>
+            </div>
+
+            <!-- Contact Us Form -->
+            <h2 class="mb-4 text-secondary pt-4">Contact Us</h2>
+            <form id="contact-form" class="contact-form mx-auto">
+                <div class="mb-3">
+                    <input type="text" name="user_name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="user_email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="user_company" class="form-control" placeholder="Company / Organization (optional)">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="user_message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button id="contact-btn" type="submit" class="btn btn-gray mx-auto mb-3 px-5 py-2">
+                    <span id="contact-btn-text">Send Message</span>
+                    <span id="contact-btn-spinner" class="spinner-border spinner-border-sm d-none ms-2" role="status" aria-hidden="true"></span>
+                </button>
+                <small class="text-muted d-block">
+                    We never share your personal information with any third parties
+                </small>
+            </form>
+
+            <!-- Success Alert -->
+            <div id="contact-success-alert"
+                 class="alert alert-success mt-3 d-none d-flex justify-content-center align-items-center text-center"
+                 role="alert">
+                <i class="fa fa-check-circle me-2"></i>
+                <span>Submission successful! Check your inbox for confirmation.</span>
+            </div>
         </div>
     </section>
 
 
     <!-- Beta -->
-    <section class="beta pt-5 pb-3 fw-lighter text-secondary-emphasis">
-        <div class="container-fluid section-container">
+    <section id="beta-info" class="beta pt-3 pb-3 fw-lighter">
+        <<div class="container-fluid section-container">
             <h2 class="section-divider">Beta</h2>
+
             <p>
-                <strong>Beta Release:</strong> The beta version of the Designer is limited to the Basic Edition. The Designer is powered by an alpha-tested version of the Pulse processor. When you use the Designer, you are experiencing Pulse in action. Upon completion of the beta phase, we plan to release a user‑facing version of Pulse.
+                <strong>Beta Release:</strong> The Designer is currently available in <strong>Beta</strong> within the <strong>Basic Edition</strong>.
+                It runs on a beta version of the Pulse processor — so when you use the Designer, you’re experiencing Pulse in action.
+                After the beta phase, we plan to introduce a user‑facing version of Pulse through the <strong>Ultimate Edition</strong>.
             </p>
 
             <p>
-                <strong>Beta Rewards:</strong> Our hands‑on experience with Pulse inside the Designer has been extremely positive, and we’re excited to bring these capabilities to a wider audience. With your valuable feedback during this beta, we’ll refine the experience and prepare for a full launch after which beta users will receive discounts on paid editions.
+                <strong>Beta Rewards:</strong> Our hands‑on work with Pulse inside the Designer has been extremely encouraging,
+                and we’re excited to share these capabilities more broadly. With your feedback during this beta,
+                we’ll refine the experience and prepare for a full launch.
+                Beta participants will be eligible for discounts or free licenses on paid editions,
+                depending on their feedback and level of participation.
             </p>
         </div>
+
     </section>
 
     <!-- Screenshot Modal -->
@@ -384,11 +432,11 @@
             <div class="modal-content bg-dark border-0">
                 <div class="modal-body p-0">
                     <div class="ratio ratio-16x9">
-                        <iframe width="1111" height="594" 
-                                src="https://www.youtube.com/embed/N25OcYXNpIw" 
-                                title="Logiop Designer" 
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
+                        <iframe width="1111" height="594"
+                                src="https://www.youtube.com/embed/N25OcYXNpIw"
+                                title="Logiop Designer"
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
                                 allowfullscreen></iframe>
                     </div>
                 </div>
@@ -414,9 +462,89 @@
         ↑
     </button>
 
+    <!-- Error Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-error" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">⚠️ Something went wrong. Please try again.</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS bundle -->
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Your custom scripts -->
     <script src="js/scripts.js"></script>
+
+    <!-- Email JS -->
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script>
+        const toastError = new bootstrap.Toast(document.getElementById('toast-error'));
+        const btn = document.getElementById("subscribe-btn");
+        const btnText = document.getElementById("subscribe-btn-text");
+        const btnSpinner = document.getElementById("subscribe-btn-spinner");
+        const btn1 = document.getElementById("contact-btn");
+        const btnText1 = document.getElementById("contact-btn-text");
+        const btnSpinner1 = document.getElementById("contact-btn-spinner");
+
+        (function () {
+            emailjs.init("iLZfXA3kxs2ds_LuW"); // from EmailJS dashboard
+        })();
+
+        document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent page reload
+
+            // Show spinner + disable button
+            btn.disabled = true;
+            btnText.textContent = "Submitting...";
+            btnSpinner.classList.remove("d-none");
+
+            emailjs.sendForm("service_0qfcbnv", "template_g9f1dls", this)
+                .then(() => {
+                    // Hide form, show success alert
+                    document.getElementById("subscribe-form").classList.add("d-none");
+                    document.getElementById("subscription-success-alert").classList.remove("d-none");
+                })
+                .catch(() => {
+                    // Show error toast
+                    toastError.show();
+                })
+                .finally(() => {
+                    // Reset button state
+                    btn.disabled = false;
+                    btnText.textContent = "Subscribe";
+                    btnSpinner.classList.add("d-none");
+                });
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent page reload
+
+            // Show spinner + disable button
+            btn1.disabled = true;
+            btnText1.textContent = "Sending...";
+            btnSpinner1.classList.remove("d-none");
+
+            emailjs.sendForm("service_0qfcbnv", "template_z1m0phj", this)
+                .then(() => {
+                    // Hide form, show success alert
+                    document.getElementById("contact-form").classList.add("d-none");
+                    document.getElementById("contact-success-alert").classList.remove("d-none");
+                })
+                .catch(() => {
+                    // Show error toast
+                    toastError.show();
+                })
+                .finally(() => {
+                    // Reset button state
+                    btn1.disabled = false;
+                    btnText1.textContent = "Send Message";
+                    btnSpinner1.classList.add("d-none");
+                });
+        });
+    </script>
 </body>
 </html>

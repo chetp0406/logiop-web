@@ -90,9 +90,9 @@ body {
     font-size: 18px;
 }
 
-.alert-phase {
-    background-color: #e9e6ef; /* muted violet */
-    color: #2F4F6F; /* edition blue for text */
+.alert-success {
+    background-color: #28a745 !important; /* vivid green */
+    color: #fff !important; /* white text for contrast */
 }
 
 .tech-term {
