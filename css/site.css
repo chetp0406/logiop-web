@@ -239,7 +239,7 @@ body {
 .overview-card {
     background: #fff;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     margin-bottom: 1rem;
     /*box-shadow: 0 4px 12px rgba(0,0,0,0.08);*/ /* subtle blur */
 }
