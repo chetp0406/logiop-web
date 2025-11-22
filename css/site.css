@@ -103,9 +103,9 @@ body {
 
 .section-divider {
     text-align: center;
-    font-size: 1.2rem;
+    /*font-size: 1.2rem;
     font-weight: 600;
-    color: #6c757d; /* muted gray */
+    color: #6c757d;*/ /* muted gray */
     margin: 0 0 1.5rem;
     position: relative;
 }
@@ -120,10 +120,15 @@ body {
         border-radius: 2px;
     }
 
+.navbar-brand span {
+    margin-top: -2px; /* adjust until visually centered */
+}
 
 .navbar-nav .nav-link {
-    color: #2F4F6F; /* your dark blue */
+    /*color: #2F4F6F;*/ /* your dark blue */
+    color: rgb(36,36,36);
     font-weight: 500;
+    font-size: 1.08rem;
 }
 
     .navbar-nav .nav-link:hover,
@@ -132,7 +137,7 @@ body {
     }
 
     .navbar-nav .nav-link.active {
-        font-weight: 700;
+        font-weight: 600;
         color: #4281cb;
     }
 
@@ -218,6 +223,7 @@ body {
 .watch-demo {
     color: #2F4F6F; /* your dark blue palette */
     transition: color 0.3s ease;
+    margin-top: 3px; /* align with button */
 }
 
     .watch-demo:hover {
@@ -231,8 +237,8 @@ body {
     font-size: 1.1rem;
 }
 
-    /* Container alignment */
-    /*.overview-section .container-fluid {
+/* Container alignment */
+/*.overview-section .container-fluid {
         padding-bottom: 3rem;
     }*/
 
@@ -418,6 +424,7 @@ body {
     background-color: #e0e0e0; /* light gray */
     color: #212529; /* dark text */
 }
+
     .btn-gray:hover {
         background-color: #d5d5d5; /* slightly darker gray */
         color: #000; /* keep text readable */

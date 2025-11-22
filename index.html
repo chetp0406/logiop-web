@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Logiop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logiop-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logiop-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/logiop-64.png">
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/all.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="css/site.css" rel="stylesheet">
 </head>
@@ -16,9 +19,9 @@
     <nav id="mainNav" class="navbar navbar-expand-1050 fixed-top navbar-light">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="navbar-brand fw-bold fs-3 d-flex align-items-center gap-2" href="#">
-                <img src="images/logiop.png" alt="Logiop icon" width="32" height="32">
-                Logiop
+            <a class="navbar-brand fw-bold fs-2 d-flex align-items-center gap-2" href="#">
+                <img src="images/logiop-64.png" alt="Logiop icon" width="36" height="36" class="align-self-center">
+                <span class="align-self-center">Logiop</span>
             </a>
 
             <!-- Toggler -->
@@ -44,8 +47,8 @@
 
             <!-- Controls group (moon + contact) -->
             <div id="controlsGroup" class="d-flex align-items-center gap-2">
-                <button class="btn btn-link p-0" id="themeToggle" aria-label="Toggle theme">
-                    <i class="bi bi-moon"></i>
+                <button class="btn btn-link p-0 me-2" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-sun text-black fs-5"></i>
                 </button>
                 <a href="#contact" class="btn btn-outline-primary">Contact</a>
             </div>
@@ -97,7 +100,7 @@
     <!-- Overview -->
     <section id="overview" class="overview-section">
         <div class="container-fluid section-container">
-            <h2 class="section-divider">Overview</h2>
+            <h2 class="section-divider text-secondary">Overview</h2>
             <!-- Logiop -->
             <div class="overview-card">
                 <h3>Logiop</h3>
@@ -138,7 +141,7 @@
     <!-- Features -->
     <section id="features" class="features mb-3">
         <div class="container-fluid section-container">
-            <h2 class="section-divider">Features</h2>
+            <h2 class="section-divider text-secondary">Features</h2>
             <div class="row">
                 <div class="col-md-4 feature-card">
                     <img src="images/diagram-project.png" alt="Design icon" class="feature-icon" />
@@ -203,7 +206,7 @@
     <!-- Editions -->
     <section id="editions" class="editions mb-5">
         <div class="container-fluid section-container">
-            <h2 class="section-divider">Editions</h2>
+            <h2 class="section-divider text-secondary">Editions</h2>
             <div class="row mt-5">
                 <!-- Basic Edition -->
                 <div class="col-md-4">
@@ -296,7 +299,7 @@
     <!-- Pricing -->
     <section id="pricing" class="pricing-section mb-5 pb-3">
         <div class="container-fluid section-container">
-            <h2 class="section-divider">Pricing</h2>
+            <h2 class="section-divider text-secondary">Pricing</h2>
             <!-- The Designer -->
             <div class="platform-card">
                 <p class="text-center">
@@ -309,7 +312,7 @@
     <!-- Supported Platforms -->
     <section id="platforms" class="platforms-section">
         <div class="container-fluid section-container">
-            <h2 class="section-divider">Supported Platforms</h2>
+            <h2 class="section-divider text-secondary">Supported Platforms</h2>
             <!-- The Designer -->
             <div class="platform-card">
                 <h3>Designer</h3>
@@ -332,7 +335,7 @@
     <!-- Stay Updated / Contact Us -->
     <section id="contact" class="py-5 stay-updated text-center">
         <div class="container">
-            <h2 class="mb-4 text-secondary">Stay Updated</h2>
+            <h2 class="section-divider text-secondary">Stay Updated</h2>
             <!-- Email subscription -->
             <form id="subscribe-form">
                 <input type="email" name="user_email" class="form-control email-input mb-3"
@@ -355,7 +358,7 @@
             </div>
 
             <!-- Contact Us Form -->
-            <h2 class="mb-4 text-secondary pt-4">Contact Us</h2>
+            <h2 class="section-divider text-secondary pt-4">Contact Us</h2>
             <form id="contact-form" class="contact-form mx-auto">
                 <div class="mb-3">
                     <input type="text" name="user_name" class="form-control" placeholder="Your Name" required>
@@ -392,7 +395,7 @@
     <!-- Beta -->
     <section id="beta-info" class="beta pt-3 pb-3 fw-lighter">
         <<div class="container-fluid section-container">
-            <h2 class="section-divider">Beta</h2>
+            <h2 class="section-divider text-secondary">Beta</h2>
 
             <p>
                 <strong>Beta Release:</strong> The Designer is currently available in <strong>Beta</strong> within the <strong>Basic Edition</strong>.
