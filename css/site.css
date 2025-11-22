@@ -238,6 +238,10 @@ body {
     font-size: 1.1rem;
 }
 
+    .overview-section h2 {
+        color: rgb(36,36,36);
+    }
+
 /* Container alignment */
 /*.overview-section .container-fluid {
         padding-bottom: 3rem;
