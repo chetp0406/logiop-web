@@ -1,0 +1,24 @@
+/* ========================
+    CTA SECTION CSS
+=========================== */
+
+.cta-section {
+  
+  .cta-content-wrapper {
+
+    @media #{$desktop} {
+      padding-right: 100px;
+    }
+  }
+
+  .cta-image {
+
+    @media #{$md, $xs} {
+      margin-top: 50px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
